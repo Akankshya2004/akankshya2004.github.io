@@ -42,6 +42,46 @@ body {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
+    position: relative;
+}
+
+/* Responsive checkered border that always fits the viewport */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    pointer-events: none;
+    background: repeating-conic-gradient(transparent 0% 25%, #fff 0% 50%) 0 0 / 24px 24px;
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    padding: 24px;
+    box-sizing: border-box;
+    transition: opacity 0.5s ease;
+}
+
+@media (max-width: 900px) {
+  body::before {
+    border-width: 14px;
+    background-size: 14px 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  body::before {
+    border-width: 8px;
+    background-size: 8px 8px;
+  }
+}
+
+/* Remove checkered border from hero section */
+#hero::before {
+  display: none !important;
 }
 
 /* Classic white and transparent checkered border that stays fixed to viewport

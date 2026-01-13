@@ -89,8 +89,10 @@ function setupPagination() {
     const sections = [
         document.getElementById('hero'),
         document.getElementById('education'),
+        document.getElementById('experience'),
         document.getElementById('certifications'),
         document.getElementById('projects'),
+        document.getElementById('proud'),
         document.getElementById('hobbies'),
         document.getElementById('contact')
     ];
@@ -157,6 +159,7 @@ document.addEventListener('DOMContentLoaded', setupPagination);
 document.addEventListener('DOMContentLoaded', function () {
     const allSections = document.querySelectorAll('.section-container');
     const eduCards = document.querySelectorAll('.tab');
+    const experienceCards = document.querySelectorAll('.experience-card');
     const certCards = document.querySelectorAll('.cert-card');
     const hobbyCards = document.querySelectorAll('.hobby-card');
     const projectCards = document.querySelectorAll('.project-card');
@@ -176,6 +179,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     certCards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(50px)';
+        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        card.style.transitionDelay = `${index * 0.1}s`;
+    });
+
+    experienceCards.forEach((card, index) => {
         card.style.opacity = '0';
         card.style.transform = 'translateY(50px)';
         card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
@@ -210,6 +220,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Reveal cards within the visible section
                 if (section.id === 'education') {
                     eduCards.forEach(card => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    });
+                } else if (section.id === 'experience') {
+                    experienceCards.forEach(card => {
                         card.style.opacity = '1';
                         card.style.transform = 'translateY(0)';
                     });

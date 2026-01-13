@@ -171,7 +171,7 @@ body::before {
     align-items: center;
     justify-content: space-between;
     gap: clamp(2rem, 5vw, 5rem);
-    padding: clamp(6rem, 12vh, 8rem) 5% clamp(4rem, 10vh, 6rem);
+    padding: clamp(6rem, 12vh, 8rem) 5% clamp(7rem, 14vh, 9rem);
     overflow: hidden;
 }
 
@@ -501,8 +501,8 @@ body::before {
   }
   
   .ticker-container {
-    height: 40px;
-    bottom: 8%;
+    height: 38px;
+    bottom: 5%;
   }
 }
 
@@ -534,11 +534,12 @@ body::before {
     position: absolute;
     width: 100vw;
     overflow: hidden;
-    height: 50px;
-    bottom: 15%;
+    height: 44px;
+    bottom: 4%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
+    pointer-events: none;
 }
 
 .ticker {
@@ -1697,6 +1698,94 @@ footer {
     transform: translateY(-5px);
 }
 
+/* Work Experience Section Styles */
+.experience-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.experience-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 28px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.experience-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: var(--primary-gradient);
+    transition: left 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.experience-card:hover::before {
+    left: 0;
+}
+
+.experience-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: var(--shadow-hover);
+}
+
+.experience-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.experience-header h3 {
+    font-size: 22px;
+    margin-bottom: 6px;
+    color: #fff;
+}
+
+.experience-company {
+    color: rgba(255, 255, 255, 0.75);
+    font-weight: 600;
+    margin: 0;
+}
+
+.experience-date {
+    display: inline-block;
+    background: rgba(102, 126, 234, 0.2);
+    color: #e6e6e6;
+    padding: 6px 14px;
+    border-radius: 16px;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.experience-summary {
+    color: #b8b8b8;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.experience-highlights {
+    margin: 8px 0 0 18px;
+    color: #c9c9c9;
+    line-height: 1.6;
+}
+
+.experience-highlights li {
+    margin-bottom: 6px;
+}
+
 
 /* Add these styles to your style.css file */
 
@@ -1787,6 +1876,15 @@ footer {
   
   /* Responsive adjustments */
   @media (max-width: 768px) {
+    .experience-container {
+      grid-template-columns: 1fr;
+    }
+
+    .experience-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
     .achievements-container {
       grid-template-columns: 1fr;
     }
@@ -1866,7 +1964,7 @@ footer {
     .ticker-container {
         position: absolute;
         width: 100vw;
-        bottom: 12%;
+        bottom: 6%;
         left: 50%;
         transform: translateX(-50%);
     }
@@ -1922,7 +2020,7 @@ footer {
     .hero-section {
         flex-direction: column;
         height: auto;
-        padding: 80px 20px 40px;
+        padding: 90px 20px 120px;
         text-align: center;
         gap: 2rem;
     }
@@ -1955,19 +2053,31 @@ footer {
         font-size: clamp(2.5rem, 8vw, 4rem);
     }
 
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .cta-primary, .cta-secondary {
+        width: min(280px, 90%);
+        justify-content: center;
+    }
+
     /* Ticker adjustments */
     .ticker-container {
         position: absolute;
-        bottom: 8%;
-        height: 40px;
+        bottom: 4%;
+        height: 36px;
         left: 50%;
         transform: translateX(-50%);
         width: 100vw;
     }
 
     .ticker {
-        font-size: 1rem;
-        padding: 10px 0;
+        font-size: 0.95rem;
+        padding: 8px 0;
+        letter-spacing: 1px;
     }
 
     /* Section container adjustments */
@@ -2215,8 +2325,9 @@ footer {
 @media screen and (max-width: 480px) {
     /* Override ALL mobile hero issues */
     .hero-section {
-        height: 100vh !important;
-        padding: 2rem 1rem !important;
+        height: auto !important;
+        min-height: 100vh !important;
+        padding: 5rem 1rem 7rem !important;
         flex-direction: column !important;
         justify-content: center !important;
         align-items: center !important;
@@ -2267,14 +2378,16 @@ footer {
     /* Ticker mobile fix */
     .ticker-container {
         position: absolute !important;
-        bottom: 10% !important;
+        bottom: 3% !important;
         left: 0 !important;
         width: 100% !important;
         z-index: 3 !important;
+        height: 34px !important;
     }
 
     .ticker {
-        font-size: 0.9rem !important;
+        font-size: 0.85rem !important;
+        padding: 7px 0 !important;
     }
 
     /* Hide performance-heavy elements on mobile */

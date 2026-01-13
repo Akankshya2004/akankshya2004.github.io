@@ -23,24 +23,6 @@
 
 <body>
 
-  <!-- Viewport Recommendation Popup -->
-<div id="viewport-popup" class="viewport-popup">
-  <div class="popup-content">
-    <div class="popup-header">
-      <h3>Welcome to my Portfolio</h3>
-      <button id="close-popup" class="close-popup"><i class="fas fa-times"></i></button>
-    </div>
-    <div class="popup-body">
-      <p>This site is optimized for viewing on both desktop computers and mobile devices for the best experience. (not so much for tablets or ipads)</p>
-      <p>Feel free to explore all sections to learn more about my work and skills!</p>
-      <p>p.s. the background is interactive :)</p>
-    </div>
-    <div class="popup-footer">
-      <button id="got-it-btn" class="got-it-btn">Got it!</button>
-    </div>
-  </div>
-</div>
-
   <!-- Pagination indicator -->
   <div class="pagination-container">
     <div class="pagination">
@@ -241,6 +223,9 @@
       <div class="experience-card">
         <div class="experience-header">
           <div>
+            <div class="experience-logo" aria-hidden="true">
+              <span class="logo-text">IC</span>
+            </div>
             <h3>Software Engineering Intern</h3>
             <p class="experience-company">InCatalyst | Software Atelier 5, USI</p>
           </div>
@@ -255,6 +240,9 @@
       <div class="experience-card">
         <div class="experience-header">
           <div>
+            <div class="experience-logo" aria-hidden="true">
+              <span class="logo-text">SC</span>
+            </div>
             <h3>Cybersecurity Analyst Intern</h3>
             <p class="experience-company">SecureClaw Inc. (Remote, USA)</p>
           </div>
@@ -291,6 +279,21 @@
         </div>
         <div class="cert-verify">
           <a href="https://aspen.eccouncil.org/VerifyBadge?type=certification&a=w57AvoJ9R9cZDo98f10HdKwTn7JqVhXVDfwZfKzyyfA="
+            class="cert-link">Verify <i class="fas fa-external-link-alt"></i></a>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-icon">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <div class="cert-content">
+          <h3>CEH Master</h3>
+          <p>EC-Council</p>
+          <span class="cert-date">Dec 2024</span>
+        </div>
+        <div class="cert-verify">
+          <a href="https://aspen.eccouncil.org/VerifyBadge?type=certification&a=QDT13hSrZclUML+ZbsOftqoS4KC4J9wTbd4DjrCYgVc="
             class="cert-link">Verify <i class="fas fa-external-link-alt"></i></a>
         </div>
       </div>
@@ -555,6 +558,7 @@
         <h3>Photography</h3>
         <p>Capturing moments and exploring perspectives through street photography and landscapes. My camera
           follows me wherever I travel.</p>
+        <a class="hobby-link" href="photography.html">View Gallery</a>
         <div class="hobby-gallery">
           <div class="gallery-img" style="background-image: url('images/hobby-photo1.jpg');"></div>
           <div class="gallery-img" style="background-image: url('images/hobby-photo2.jpg');"></div>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 800" preserveAspectRatio="none">
+  <defs>
+    <filter id="paperShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="0" stdDeviation="2" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <path
+    d="M60 0
+       L70 18 L54 36 L72 58 L50 80 L68 102 L52 124 L74 150 L48 176 L70 202
+       L52 228 L76 254 L50 280 L72 308 L48 334 L70 360 L52 386 L74 412 L50 438
+       L72 464 L48 492 L70 520 L52 548 L76 576 L50 604 L72 632 L48 660 L70 688
+       L52 716 L74 744 L50 772 L62 800
+       L40 800 L46 772 L32 748 L48 724 L30 700 L46 676 L32 652 L48 628 L30 604
+       L46 580 L32 556 L48 532 L30 508 L46 484 L32 460 L48 436 L30 412 L46 388
+       L32 364 L48 340 L30 316 L46 292 L32 268 L48 244 L30 220 L46 196 L32 172
+       L48 148 L30 124 L46 100 L32 76 L48 52 L30 28 L46 14 L40 0 Z"
+    fill="#f7f3ea"
+    filter="url(#paperShadow)"/>
+</svg>

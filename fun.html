@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Akankshya | Fun Zone</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --fun-bg: #faf8f2;
+      --fun-accent: #f9d648;
+      --fun-card-bg: #fff;
+      --text-color: #333;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--fun-bg);
+      font-family: 'Inter', sans-serif;
+      color: var(--text-color);
+      overflow-x: hidden;
+      background-image: radial-gradient(#e0e0e0 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+
+    header {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Cabin Sketch', cursive;
+      font-size: 4rem;
+      margin-bottom: 10px;
+      color: #ff7b7b;
+      transform: rotate(-2deg);
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: #666;
+      font-family: 'Cabin Sketch', cursive;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+    }
+
+    .fun-card {
+      background: var(--fun-card-bg);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+      border: 3px solid #333;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .fun-card:hover {
+      transform: translateY(-10px) rotate(1deg);
+      box-shadow: 15px 15px 0 rgba(0,0,0,0.15);
+    }
+
+    .card-icon {
+      font-size: 4rem;
+      margin-bottom: 20px;
+    }
+
+    .card-title {
+      font-family: 'Cabin Sketch', cursive;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .card-desc {
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .back-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      padding: 10px 20px;
+      background: #333;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      z-index: 100;
+      transition: background 0.3s;
+    }
+
+    .back-btn:hover {
+      background: #555;
+    }
+
+    /* Tape effect on cards */
+    .fun-card::before {
+      content: '';
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 30px;
+      background: rgba(255, 255, 255, 0.5);
+      border: 1px dashed #ccc;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <a href="test.html" class="back-btn">← Back</a>
+
+  <header>
+    <h1>The Fun Zone</h1>
+    <p class="subtitle">Where ideas go to play</p>
+  </header>
+
+  <div class="container">
+    <a href="photography.html" class="fun-card">
+      <div class="card-icon">📸</div>
+      <h2 class="card-title">Photography</h2>
+      <p class="card-desc">Capturing moments, light, and stories through my lens. Check out my gallery!</p>
+    </a>
+
+    <!-- Placeholder for Hobbies - could be a page or just content -->
+    <a href="#" class="fun-card" onclick="alert('Hobbies section coming soon! imagine: Hiking, Painting, Gaming...')">
+      <div class="card-icon">🎨</div>
+      <h2 class="card-title">Hobbies</h2>
+      <p class="card-desc">Sketches, watercolors, bad puns, and everything else that keeps me sane.</p>
+    </a>
+
+    <a href="#" class="fun-card" onclick="alert('Playlist coming soon!')">
+      <div class="card-icon">🎧</div>
+      <h2 class="card-title">My Playlist</h2>
+      <p class="card-desc">The tunes that power my coding sessions and midnight drives.</p>
+    </a>
+  </div>
+
+</body>
+</html>

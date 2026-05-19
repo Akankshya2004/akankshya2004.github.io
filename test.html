@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dual Identity Test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="test.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Cabin+Sketch:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="split-test">
+    <section class="pane pane-pro">
+      <canvas id="pro-canvas" aria-hidden="true"></canvas>
+      <div class="pro-glow"></div>
+      <div class="pro-grid"></div>
+      <h1 class="hero-name name-pro">Akankshya</h1>
+      <a href="index.html" class="cta-btn btn-pro">Take me to the work side</a>
+      
+      <!-- Pro Decorations -->
+      <div class="deco pro-deco code-float-1">{ }</div>
+      <div class="deco pro-deco code-float-2">&lt;/&gt;</div>
+      <div class="deco pro-deco tech-circle-1"></div>
+      
+      <!-- Pro Ticker -->
+      <div class="ticker-container pro-ticker">
+        <div class="ticker-track">
+          <span>INNOVATOR &nbsp;•&nbsp; PROBLEM SOLVER &nbsp;•&nbsp; DEVELOPER &nbsp;•&nbsp; STRATEGIST &nbsp;•&nbsp; ANALYST &nbsp;•&nbsp; </span>
+          <span>INNOVATOR &nbsp;•&nbsp; PROBLEM SOLVER &nbsp;•&nbsp; DEVELOPER &nbsp;•&nbsp; STRATEGIST &nbsp;•&nbsp; ANALYST &nbsp;•&nbsp; </span>
+        </div>
+      </div>
+    </section>
+    
+    <img src="Assets/pics/mainn.png" class="split-img center-img" alt="Main Portrait">
+
+    <div class="tear" aria-hidden="true"></div>
+
+    <section class="pane pane-fun">
+      <div class="paper-lines"></div>
+      <div class="paper-warm"></div>
+      <div class="fun-doodles"></div>
+      
+      <!-- Fun Ticker -->
+      <div class="ticker-container fun-ticker">
+        <div class="ticker-track">
+          <span>DREAMER &nbsp;★&nbsp; PHOTOGRAPHER &nbsp;★&nbsp; ARTIST &nbsp;★&nbsp; EDITOR &nbsp;★&nbsp; EXPLORER &nbsp;★&nbsp; </span>
+          <span>DREAMER &nbsp;★&nbsp; PHOTOGRAPHER &nbsp;★&nbsp; ARTIST &nbsp;★&nbsp; EDITOR &nbsp;★&nbsp; EXPLORER &nbsp;★&nbsp; </span>
+        </div>
+      </div>
+      
+      <!-- Fun Decorations -->
+      <div class="deco fun-deco paper-plane"><img src="Assets/pics/paper-plane.png" style="display:none;" onerror="this.parentNode.innerHTML='✈️'" alt="Paper Plane"></div> 
+      <!-- Fallback to emoji if image doesn't exist, sticking to emoji for now for simplicity/reliability without file upload -->
+      <div class="deco fun-deco music-note">🎵</div>
+      <div class="deco fun-deco doodle-star">★</div>
+
+      <h1 class="hero-name name-fun">Ingale</h1>
+      <a href="fun.html" class="cta-btn btn-fun">Take me to the fun side</a>
+    </section>
+  </main>
+
+  <script src="test.js"></script>
+</body>
+</html>

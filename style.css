@@ -269,11 +269,8 @@ body::before {
     padding-bottom: 0.06em;
     display: inline-block;
     margin-bottom: 24px;
-    background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 25%, #e8e8e8 50%, #ffffff 75%, #f0f0f0 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+    color: oklch(97% 0.007 270);
+    text-shadow: 0 0 80px oklch(62% 0.22 275 / 0.5);
     letter-spacing: -0.02em;
     font-family: 'Bosch', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     font-feature-settings: 'ss01', 'ss02', 'cv01', 'cv02';
@@ -705,11 +702,9 @@ nav ul li a:hover::after {
 .section-title {
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 700;
-    background: linear-gradient(135deg, #ffffff 0%, #a8a8a8 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: oklch(97% 0.005 270);
     margin-bottom: 16px;
+    letter-spacing: -0.02em;
     position: relative;
 }
 
@@ -1081,11 +1076,7 @@ nav ul li a:hover::after {
 .title-text {
     font-size: 4rem;
     margin-bottom: 20px;
-    background: linear-gradient(to right, #CCCCCC, #FFFFFF);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    color: oklch(97% 0.005 270);
 }
 
 .highlight {
@@ -1261,10 +1252,7 @@ nav ul li a:hover::after {
 .project-title {
     font-size: 1.8rem;
     margin-bottom: 15px;
-    background: linear-gradient(to right, #CCCCCC, #FFFFFF);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: oklch(96% 0.005 270);
 }
 
 .project-description {
@@ -2529,4 +2517,228 @@ footer {
         align-items: center;
         text-align: center;
     }
+}
+
+
+/* ═══════════════════════════════════════════════
+   REDESIGN: Floating Pill Navbar + Design Overhaul
+   ═══════════════════════════════════════════════ */
+
+/* Dark purple body — more expressive than near-black */
+body {
+  background: oklch(9% 0.018 270);
+}
+
+/* ─── Floating Pill Navbar ─── */
+.floating-nav {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  padding: 6px 6px 6px 22px;
+  background: oklch(13% 0.028 270 / 0.82);
+  backdrop-filter: blur(28px) saturate(1.8);
+  -webkit-backdrop-filter: blur(28px) saturate(1.8);
+  border: 1px solid oklch(70% 0.05 270 / 0.14);
+  border-radius: 50px;
+  box-shadow:
+    0 8px 32px oklch(0% 0 0 / 0.45),
+    0 2px 8px oklch(0% 0 0 / 0.25),
+    inset 0 1px 0 oklch(100% 0 0 / 0.07);
+  transition: background 0.35s ease, box-shadow 0.35s ease;
+  white-space: nowrap;
+}
+
+.floating-nav.scrolled {
+  background: oklch(10% 0.032 270 / 0.95);
+  box-shadow:
+    0 16px 48px oklch(0% 0 0 / 0.6),
+    0 4px 12px oklch(0% 0 0 / 0.3),
+    inset 0 1px 0 oklch(100% 0 0 / 0.05);
+  border-color: oklch(70% 0.05 270 / 0.10);
+}
+
+.nav-brand {
+  font-size: 15px;
+  font-weight: 700;
+  color: oklch(97% 0.008 270);
+  text-decoration: none;
+  letter-spacing: -0.03em;
+  margin-right: 6px;
+  font-family: 'Bosch', 'Inter', sans-serif;
+  transition: color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.nav-brand:hover {
+  color: oklch(100% 0 0);
+}
+
+.floating-nav .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.floating-nav .nav-links a {
+  color: oklch(70% 0.03 270);
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 500;
+  padding: 8px 13px;
+  border-radius: 40px;
+  transition: background 0.18s ease, color 0.18s ease;
+  letter-spacing: -0.01em;
+  display: block;
+}
+
+.floating-nav .nav-links a:hover,
+.floating-nav .nav-links a.active {
+  background: oklch(100% 0 0 / 0.08);
+  color: oklch(97% 0.005 270);
+}
+
+.nav-cta {
+  background: oklch(58% 0.21 275);
+  color: oklch(98% 0.005 270);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 40px;
+  transition: background 0.18s ease, transform 0.15s ease, box-shadow 0.18s ease;
+  letter-spacing: -0.01em;
+  margin-left: 8px;
+  flex-shrink: 0;
+}
+
+.nav-cta:hover {
+  background: oklch(64% 0.21 275);
+  transform: scale(1.03);
+  box-shadow: 0 4px 20px oklch(58% 0.21 275 / 0.5);
+}
+
+/* Responsive nav */
+@media (max-width: 900px) {
+  .floating-nav {
+    padding: 6px 6px 6px 16px;
+  }
+  .floating-nav .nav-links li:nth-child(n+3) {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .floating-nav {
+    top: 12px;
+    padding: 5px 5px 5px 14px;
+  }
+  .floating-nav .nav-links {
+    display: none;
+  }
+  .nav-brand {
+    margin-right: 6px;
+  }
+  .nav-cta {
+    padding: 9px 16px;
+    font-size: 12px;
+    margin-left: 6px;
+  }
+}
+
+/* ─── Hero improvements ─── */
+.hero-section {
+  padding: clamp(7rem, 13vh, 9rem) 5% clamp(7rem, 14vh, 9rem);
+}
+
+/* ─── Section title polish ─── */
+.section-title::after {
+  width: 48px;
+  height: 3px;
+}
+
+/* ─── Experience card polish ─── */
+.experience-card:hover {
+  box-shadow:
+    0 22px 50px oklch(0% 0 0 / 0.5),
+    0 0 0 1px oklch(60% 0.18 270 / 0.2);
+}
+
+/* ─── Cert card polish ─── */
+.cert-card {
+  background:
+    linear-gradient(165deg, oklch(16% 0.022 270 / 0.9), oklch(10% 0.018 270 / 0.95)) padding-box,
+    linear-gradient(135deg, oklch(60% 0.18 270 / 0.4), oklch(43% 0.14 295 / 0.2)) border-box;
+  border: 1px solid transparent;
+}
+
+.cert-icon {
+  background: oklch(20% 0.04 270 / 0.6);
+  color: oklch(70% 0.22 280);
+}
+
+/* ─── Achievement card polish ─── */
+.achievement-icon {
+  background: oklch(60% 0.20 275);
+  box-shadow: 0 8px 24px oklch(60% 0.20 275 / 0.35);
+  border-radius: 14px;
+}
+
+/* ─── Hobby card icon ─── */
+.hobby-icon {
+  background: oklch(16% 0.04 275 / 0.7);
+  color: oklch(70% 0.22 280);
+  border: 1px solid oklch(70% 0.10 275 / 0.15);
+}
+
+/* ─── Project card hover ─── */
+.project-card:hover {
+  box-shadow:
+    0 24px 48px oklch(0% 0 0 / 0.45),
+    0 0 0 1px oklch(60% 0.18 270 / 0.18);
+}
+
+/* ─── Submit button ─── */
+.submit-btn {
+  background: oklch(58% 0.21 275);
+  box-shadow: 0 4px 20px oklch(58% 0.21 275 / 0.3);
+}
+
+.submit-btn:hover {
+  background: oklch(63% 0.21 275);
+  box-shadow: 0 8px 28px oklch(58% 0.21 275 / 0.5);
+}
+
+/* ─── Social links ─── */
+.social-link:hover {
+  background: oklch(58% 0.21 275);
+  box-shadow: 0 5px 18px oklch(58% 0.21 275 / 0.4);
+}
+
+/* ─── Footer ─── */
+footer {
+  background: oklch(10% 0.02 270 / 0.7);
+  border-top: 1px solid oklch(100% 0 0 / 0.07);
+}
+
+/* ─── GSAP entrance: hero enters from top ─── */
+.floating-nav {
+  animation: navDropIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+
+@keyframes navDropIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
 }
